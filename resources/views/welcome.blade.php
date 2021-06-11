@@ -7,6 +7,7 @@
     <title>Report</title>
 </head>
 <body>
+
 <table style="width:100%">
   <tr>
     <th>Fulltname</th>
@@ -34,5 +35,8 @@
 
  @endforeach
 </table>
+<a href="{{route('export')}}" >
+  <button >Export File</button>
+</a>
 </body>
 </html>

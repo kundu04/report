@@ -18,3 +18,4 @@ use App\Http\Controllers\reportController;
 // });
 
 Route::get('/',[reportController::class, 'index']);
+Route::get('/export',[reportController::class, 'export'])->name('export');
