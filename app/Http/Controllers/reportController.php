@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Exports\UserExport;
+use App\Imports\UsersImport;
 use Maatwebsite\Excel\Facades\Excel;
 class reportController extends Controller
 {
@@ -17,6 +18,14 @@ class reportController extends Controller
         return Excel::download(new UserExport, 'report.xlsx');
 
     }
+    
+    public function import(Request $request){
+        
+        Excel::import(new UsersImport, $request->file);
+        return back()->with('message', 'All good!');
+
+    }
+
    
     public function ss(){
         return view('ss');

@@ -7,6 +7,9 @@
     <title>Report</title>
 </head>
 <body>
+@if(Session::has('message'))
+<div class="btn btn-success">{{Session::get('message')}}</div>
+@endif
 
 <table style="width:100%">
   <tr>
@@ -38,5 +41,14 @@
 <a href="{{route('export')}}" >
   <button >Export File</button>
 </a>
+<br><br>
+<form action="{{route('import')}}" method="post" enctype="multipart/form-data">
+@csrf
+<div class="from-group">
+<label for="file">Import File</label>
+<input type="file" name="file" >
+</div>
+<button type="submit" class="btn btn-primary">submit</button>
+</form>
 </body>
 </html>
