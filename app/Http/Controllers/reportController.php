@@ -17,4 +17,11 @@ class reportController extends Controller
         return Excel::download(new UserExport, 'report.xlsx');
 
     }
+   
+    public function ss(){
+        return view('ss');
+    }
+    public function aa(){
+        return view('aa');
+    }
 }

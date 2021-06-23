@@ -19,3 +19,5 @@ use App\Http\Controllers\reportController;
 
 Route::get('/',[reportController::class, 'index']);
 Route::get('/export',[reportController::class, 'export'])->name('export');
+Route::get('ss',[reportController::class, 'ss']);
+Route::get('aa',[reportController::class, 'ss']);
